@@ -28,25 +28,42 @@ class AfishaManagerTest {
                 new Film(10, "Soul", "cartoon"),
                 new Film(11, "Dune", "fantastic"),
         };
+        Film[] actual = afisha.findAll();
+        assertArrayEquals(expected, actual);
     }
 
     @Test
     void shouldShowFilms() {
-        afisha1.getLastAdded();
+        afisha.getLastAdded();
         Film[] expected = new Film[]{
-                new Film(1, "Bloodshot", "thriller"),
-                new Film(2, "Onward", "cartoon"),
-                new Film(3, "Hotel Belgrad", "comedy"),
-                new Film(4, "The Gentlemen", "thriller"),
-                new Film(5, "The Invisible Man", "horror"),
-                new Film(6, "Trolls", "cartoon"),
-                new Film(7, "Number One", "comedy"),
-                new Film(8, "Free Guy", "fantastic"),
-                new Film(9, "After We Fell", "drama"),
                 new Film(10, "Soul", "cartoon"),
-//                new Film(11, "Dune", "fantastic"),
+                new Film(9, "After We Fell", "drama"),
+                new Film(8, "Free Guy", "fantastic"),
+                new Film(7, "Number One", "comedy"),
+                new Film(6, "Trolls", "cartoon"),
+                new Film(5, "The Invisible Man", "horror"),
+                new Film(4, "The Gentlemen", "thriller"),
+                new Film(3, "Hotel Belgrad", "comedy"),
+                new Film(2, "Onward", "cartoon"),
+                new Film(1, "Bloodshot", "thriller"),
         };
         Film[] actual = afisha.getLastAdded();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowFilms2() {
+        afisha1.getLastAdded();
+        Film[] expected = new Film[]{
+                new Film(7, "Number One", "comedy"),
+                new Film(6, "Trolls", "cartoon"),
+                new Film(5, "The Invisible Man", "horror"),
+                new Film(4, "The Gentlemen", "thriller"),
+                new Film(3, "Hotel Belgrad", "comedy"),
+                new Film(2, "Onward", "cartoon"),
+                new Film(1, "Bloodshot", "thriller"),
+        };
+        Film[] actual = afisha1.getLastAdded();
         assertArrayEquals(expected, actual);
     }
 }

@@ -3,32 +3,32 @@ package ru.netology.manager;
 import ru.netology.domain.Film;
 
 public class AfishaManager {
-    private Film[] films = new Film[0];
+    private Film[] films = new Film[]{
+            new Film(1, "Bloodshot", "thriller"),
+            new Film(2, "Onward", "cartoon"),
+            new Film(3, "Hotel Belgrad", "comedy"),
+            new Film(4, "The Gentlemen", "thriller"),
+            new Film(5, "The Invisible Man", "horror"),
+            new Film(6, "Trolls", "cartoon"),
+            new Film(7, "Number One", "comedy"),
+            new Film(8, "Free Guy", "fantastic"),
+            new Film(9, "After We Fell", "drama"),
+            new Film(10, "Soul", "cartoon"),
+    };
     private int showFilms = 10;
     private int resultLength = films.length;
 
-    public static void film(String[] args) {
-        Film first = new Film(1, "Bloodshot", "thriller");
-        Film second = new Film(2, "Onward", "cartoon");
-        Film third = new Film(3, "Hotel Belgrad", "comedy");
-        Film fourth = new Film(4, "The Gentlemen", "thriller");
-        Film fifth = new Film(5, "The Invisible Man", "horror");
-        Film sixth= new Film(6, "Trolls", "cartoon");
-        Film seventh= new Film(7, "Number One", "comedy");
-        Film eighth = new Film(8, "Free Guy", "fantastic");
-        Film ninth = new Film(9, "After We Fell", "drama");
-        Film tenth = new Film(10, "Soul", "cartoon");
-    }
-
     public AfishaManager() {
+
     }
 
     public AfishaManager(int resultLength) {
+
         this.resultLength = resultLength;
     }
 
 
-    public void add (Film film) {
+    public void add(Film film) {
         int length = films.length + 1;
         Film[] tmp = new Film[length];
         System.arraycopy(films, 0, tmp, 0, films.length);
@@ -43,8 +43,6 @@ public class AfishaManager {
     public Film[] getLastAdded() {
         if (resultLength >= showFilms) {
             resultLength = showFilms;
-        } else {
-            resultLength = resultLength;
         }
         Film[] films = findAll();
         Film[] result = new Film[resultLength];
