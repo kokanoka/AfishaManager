@@ -8,12 +8,34 @@ import static org.junit.jupiter.api.Assertions.*;
 class AfishaManagerTest {
 
     AfishaManager afisha = new AfishaManager();
-    AfishaManager afisha1 = new AfishaManager(7);
+    AfishaManager constructor = new AfishaManager(7);
     private Film filmToAdd = new Film(11, "Dune", "fantastic");
 
     @Test
     void shouldAddFilm() {
+        Film first = new Film(1, "Bloodshot", "thriller");
+        Film second = new Film(2, "Onward", "cartoon");
+        Film third = new Film(3, "Hotel Belgrad", "comedy");
+        Film fourth = new Film(4, "The Gentlemen", "thriller");
+        Film fifth = new Film(5, "The Invisible Man", "horror");
+        Film sixth = new Film(6, "Trolls", "cartoon");
+        Film seventh = new Film(7, "Number One", "comedy");
+        Film eighth = new Film(8, "Free Guy", "fantastic");
+        Film ninth = new Film(9, "After We Fell", "drama");
+        Film tenth = new Film(10, "Soul", "cartoon");
+
+        afisha.add(first);
+        afisha.add(second);
+        afisha.add(third);
+        afisha.add(fourth);
+        afisha.add(fifth);
+        afisha.add(sixth);
+        afisha.add(seventh);
+        afisha.add(eighth);
+        afisha.add(ninth);
+        afisha.add(tenth);
         afisha.add(filmToAdd);
+
         Film[] expected;
         expected = new Film[]{
                 new Film(1, "Bloodshot", "thriller"),
@@ -34,7 +56,29 @@ class AfishaManagerTest {
 
     @Test
     void shouldShowFilms() {
-        afisha.getLastAdded();
+
+        Film first = new Film(1, "Bloodshot", "thriller");
+        Film second = new Film(2, "Onward", "cartoon");
+        Film third = new Film(3, "Hotel Belgrad", "comedy");
+        Film fourth = new Film(4, "The Gentlemen", "thriller");
+        Film fifth = new Film(5, "The Invisible Man", "horror");
+        Film sixth = new Film(6, "Trolls", "cartoon");
+        Film seventh = new Film(7, "Number One", "comedy");
+        Film eighth = new Film(8, "Free Guy", "fantastic");
+        Film ninth = new Film(9, "After We Fell", "drama");
+        Film tenth = new Film(10, "Soul", "cartoon");
+
+        afisha.add(first);
+        afisha.add(second);
+        afisha.add(third);
+        afisha.add(fourth);
+        afisha.add(fifth);
+        afisha.add(sixth);
+        afisha.add(seventh);
+        afisha.add(eighth);
+        afisha.add(ninth);
+        afisha.add(tenth);
+
         Film[] expected = new Film[]{
                 new Film(10, "Soul", "cartoon"),
                 new Film(9, "After We Fell", "drama"),
@@ -52,10 +96,62 @@ class AfishaManagerTest {
     }
 
     @Test
-    void shouldShowFilms2() {
-        afisha1.getLastAdded();
+    void shouldShowFilmsWithConsrtructor() {
+
+        Film first = new Film(1, "Bloodshot", "thriller");
+        Film second = new Film(2, "Onward", "cartoon");
+        Film third = new Film(3, "Hotel Belgrad", "comedy");
+        Film fourth = new Film(4, "The Gentlemen", "thriller");
+        Film fifth = new Film(5, "The Invisible Man", "horror");
+        Film sixth = new Film(6, "Trolls", "cartoon");
+        Film seventh = new Film(7, "Number One", "comedy");
+        Film eighth = new Film(8, "Free Guy", "fantastic");
+        Film ninth = new Film(9, "After We Fell", "drama");
+        Film tenth = new Film(10, "Soul", "cartoon");
+
+        constructor.add(first);
+        constructor.add(second);
+        constructor.add(third);
+        constructor.add(fourth);
+        constructor.add(fifth);
+        constructor.add(sixth);
+        constructor.add(seventh);
+        constructor.add(eighth);
+        constructor.add(ninth);
+        constructor.add(tenth);
+
         Film[] expected = new Film[]{
+                new Film(10, "Soul", "cartoon"),
+                new Film(9, "After We Fell", "drama"),
+                new Film(8, "Free Guy", "fantastic"),
                 new Film(7, "Number One", "comedy"),
+                new Film(6, "Trolls", "cartoon"),
+                new Film(5, "The Invisible Man", "horror"),
+                new Film(4, "The Gentlemen", "thriller"),
+        };
+        Film[] actual = constructor.getLastAdded();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void shouldShowFilmsLessShowFilms() {
+
+        Film first = new Film(1, "Bloodshot", "thriller");
+        Film second = new Film(2, "Onward", "cartoon");
+        Film third = new Film(3, "Hotel Belgrad", "comedy");
+        Film fourth = new Film(4, "The Gentlemen", "thriller");
+        Film fifth = new Film(5, "The Invisible Man", "horror");
+        Film sixth = new Film(6, "Trolls", "cartoon");
+
+        afisha.add(first);
+        afisha.add(second);
+        afisha.add(third);
+        afisha.add(fourth);
+        afisha.add(fifth);
+        afisha.add(sixth);
+
+
+        Film[] expected = new Film[]{
                 new Film(6, "Trolls", "cartoon"),
                 new Film(5, "The Invisible Man", "horror"),
                 new Film(4, "The Gentlemen", "thriller"),
@@ -63,7 +159,8 @@ class AfishaManagerTest {
                 new Film(2, "Onward", "cartoon"),
                 new Film(1, "Bloodshot", "thriller"),
         };
-        Film[] actual = afisha1.getLastAdded();
+        Film[] actual = afisha.getLastAdded();
         assertArrayEquals(expected, actual);
     }
+
 }
