@@ -3,7 +3,7 @@ package ru.netology.manager;
 import ru.netology.domain.Film;
 
 public class AfishaManager {
-   private Film[] films = new Film[0];
+    private Film[] films = new Film[0];
     int showFilms = 10;
     int resultLength;
 
@@ -11,7 +11,7 @@ public class AfishaManager {
     }
 
     public AfishaManager(int showFilms) {
-                this.showFilms = showFilms;
+        this.showFilms = showFilms;
     }
 
 
@@ -24,7 +24,9 @@ public class AfishaManager {
         films = tmp;
     }
 
-    public Film[] findAll() { return films; }
+    public Film[] findAll() {
+        return films;
+    }
 
 
     public Film[] getLastAdded() {
